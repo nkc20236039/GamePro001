@@ -9,6 +9,7 @@ public class EnemyGenerator : MonoBehaviour
 
     [SerializeField, Range(0.0f, 3.0f)] float span = 1.0f; // ¢Š«ŠÔ
     float delta = 0;
+    float summonX = 9;
 
     [SerializeField] GameObject Enemy;  // ¢Š«‘ÎÛ
 
@@ -24,7 +25,7 @@ public class EnemyGenerator : MonoBehaviour
             GameObject summon = Instantiate(Enemy);
             float px = Random.Range(randomMin, randomMax);
 
-            summon.transform.position = new Vector3(10, px, 0);
+            summon.transform.position = new Vector3(summonX, px, 0);
         }
     }
 }

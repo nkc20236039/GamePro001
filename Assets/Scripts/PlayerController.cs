@@ -6,10 +6,14 @@ public class PlayerController : MonoBehaviour
 {
     Vector3 dir;    // 入力方向
     Animator PlayerAnime;  // プレイヤーのアニメーション
-    [SerializeField]    float speed = 0.5f; // 移動速度
+    [SerializeField] GameObject Director;
+
+    [SerializeField] float speed = 0.5f; // 移動速度
+    float hitDamage = 10f;
+
     // 移動制限
-    [SerializeField]    Vector2 rangeMax = new Vector2(10.0f, 5.0f);
-    [SerializeField]    Vector2 rangeMin = new Vector2(-10.0f, -5.0f);
+    [SerializeField] Vector2 rangeMax = new Vector2(10.0f, 5.0f);
+    [SerializeField] Vector2 rangeMin = new Vector2(-10.0f, -5.0f);
 
     Vector3 pos;
 
@@ -45,6 +49,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "EnemyEye")
         {
+            // 時間を減らす
+            Director.GetComponent<GameDirector>().damage = hitDamage;
+
+            // 当たった敵を削除
             Destroy(collision.gameObject);
         }
     }
