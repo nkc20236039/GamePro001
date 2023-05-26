@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
-    int randomMax = 5;
-    int randomMin = -5;
+    float randomMax = 4.5f;
+    float randomMin = -4.5f;
 
     [SerializeField, Range(0.0f, 3.0f)] float span = 1.0f; // ¢Š«ŠÔ
     float delta = 0;
