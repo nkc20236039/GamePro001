@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
-    float randomMax = 4.5f;
-    float randomMin = -4.5f;
-
-    [SerializeField, Range(0.0f, 3.0f)] float span = 1.0f; // ¢Š«ŠÔ
-    float delta = 0;
-    float summonX = 9;
+    float randomMax = 4.5f;                                 // —”¶¬‚ÌX
+    float randomMin = -4.5f;                                // —”¶¬‚ÌY
+    
+    [SerializeField, Range(0.0f, 3.0f)] float span = 1.0f;  // ¢Š«ŠÔŠu
+    float delta = 0;                                        // Œo‰ßŠÔ
+    const float SUMMON_X = 10;                                     // ¢Š«À•W
 
     [SerializeField] GameObject Enemy;  // ¢Š«‘ÎÛ
 
@@ -22,10 +23,9 @@ public class EnemyGenerator : MonoBehaviour
         {
             delta = 0;  // init
 
-            GameObject summon = Instantiate(Enemy);
+            // “G‚ğƒ‰ƒ“ƒ_ƒ€‚É¢Š«
             float px = Random.Range(randomMin, randomMax);
-
-            summon.transform.position = new Vector3(summonX, px, 0);
+            Instantiate(Enemy, new Vector3(SUMMON_X, px, 0), Quaternion.identity);
         }
     }
 }

@@ -8,12 +8,12 @@ using UnityEngine.UI;
 public class GameDirector : MonoBehaviour
 {
     [SerializeField] GameObject TimeGage;   // タイムゲージオブジェクト
-    [SerializeField] GameObject advance;   // タイムゲージオブジェクト
+    [SerializeField] GameObject advance;    // タイムゲージオブジェクト
 
-    const float TIME_LIMIT = 100f;  // 制限時間の最大値
-    float time = TIME_LIMIT;    // 残り時間
-    public float damage;
-    float MperS = 0;
+    const float TIME_LIMIT = 100f;          // 制限時間の最大値
+    float time = TIME_LIMIT;                // 残り時間
+    public float damage;                    // 当たった時に減らされる時間ダメージ
+    float MperS = 0;                        // 60m/sの計算
 
     void Update()
     {

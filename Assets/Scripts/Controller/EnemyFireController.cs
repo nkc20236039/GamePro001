@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBallController : MonoBehaviour
+public class EnemyFireController : MonoBehaviour
 {
-    [SerializeField] float speed = 1.5f; // ファイアボールのスピード
+    [SerializeField] float speed = -1.5f; // ファイアボールのスピード
+
+    [SerializeField] GameObject Director;       // ディレクターオブジェクト
 
     void Update()
     {
@@ -14,10 +16,10 @@ public class FireBallController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // 目の敵に当たったらお互いを消す
-        if (collision.gameObject.tag == "EnemyEye")
+        // プレイヤーに当たったらダメージを与える
+        if (collision.gameObject.name == "Player")
         {
-            Destroy(collision.gameObject);
+            Director.GetComponent<GameDirector>().damage = 5f;
             Destroy(gameObject);
         }
     }

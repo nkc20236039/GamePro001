@@ -491,7 +491,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Chapter\uFF15\u8AB2\u984C\nGamePro001\nZ or Button0\nStart"
+  m_Text: "Chapter\uFF15\u8AB2\u984C\nGamePro001\nSpace or Button0\nStart"
 --- !u!222 &1887821564
 CanvasRenderer:
   m_ObjectHideFlags: 0

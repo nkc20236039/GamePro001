@@ -1,25 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    Vector3 dir;                                // 入力方向
     Animator PlayerAnime;                       // プレイヤーのアニメーション
 
-    [SerializeField] GameObject Director;
+    [SerializeField] GameObject Director;       // ディレクターオブジェクト
     [SerializeField] GameObject fireBallPrefab; // ファイアボールのプレハブ
     
     [SerializeField] float speed = 1f;          // 移動速度
     [SerializeField] float fireBallSpan = 3;    // 長押ししているときに射出される間隔
-    float hitDamage = 10f;                      // 敵に当たった時のダメージ
     float time;
 
     // 移動制限
-    [SerializeField] Vector2 rangeMax = new Vector2(10.0f, 5.0f);
-    [SerializeField] Vector2 rangeMin = new Vector2(-10.0f, -5.0f);
-
-    Vector3 pos;
+    [SerializeField] Vector2 rangeMax = 
+        new Vector2(10.0f, 5.0f);               // 最大の移動できる範囲
+    [SerializeField] Vector2 rangeMin = 
+        new Vector2(-10.0f, -5.0f);             // 最小の移動できる範囲
 
     void Start()
     {
@@ -29,8 +28,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         /*__INIT__*/
-        dir = Vector3.zero;
-        pos = transform.position;
+        Vector3 dir = Vector3.zero;             // 移動方向
+        Vector3 pos = transform.position;       // 現在位置
 
         // 入力方向取得
         dir.x = Input.GetAxisRaw("Horizontal");
@@ -49,14 +48,14 @@ public class PlayerController : MonoBehaviour
         transform.position = pos;
 
         // ファイアボールを飛ばす
+        // 左クリックかスペースキーかコントローラー0
         if (Input.GetButton("Fire1"))
         {
             time += Time.deltaTime;
             if (time > fireBallSpan)
             {
                 time = 0;
-                GameObject fireBall =  Instantiate(fireBallPrefab);
-                fireBall.transform.position = this.transform.position;
+                GameObject fireBall =  Instantiate(fireBallPrefab, transform.position, Quaternion.identity);
             }
         }
 
@@ -72,7 +71,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "EnemyEye")
         {
             // 時間を減らす
-            Director.GetComponent<GameDirector>().damage = hitDamage;
+            Director.GetComponent<GameDirector>().damage = 10f;
 
             // 当たった敵を削除
             Destroy(collision.gameObject);
