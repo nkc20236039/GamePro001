@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     Animator PlayerAnime;                       // プレイヤーのアニメーション
 
-    [SerializeField] GameObject Director;       // ディレクターオブジェクト
     [SerializeField] GameObject fireBallPrefab; // ファイアボールのプレハブ
     
     [SerializeField] float speed = 1f;          // 移動速度
@@ -55,7 +54,7 @@ public class PlayerController : MonoBehaviour
             if (time > fireBallSpan)
             {
                 time = 0;
-                GameObject fireBall =  Instantiate(fireBallPrefab, transform.position, Quaternion.identity);
+                GameObject fireBall =  Instantiate(fireBallPrefab, transform.position, Quaternion.Euler(0, 0, -90));
             }
         }
 
@@ -71,7 +70,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "EnemyEye")
         {
             // 時間を減らす
-            Director.GetComponent<GameDirector>().damage = 10f;
+            GameDirector.damage = 10f;
 
             // 当たった敵を削除
             Destroy(collision.gameObject);

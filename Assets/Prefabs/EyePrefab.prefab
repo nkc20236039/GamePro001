@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1802966865, guid: cf90bfa008788b743be8f12dc4be3507, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -158,7 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc06b79106871f343aa9672323339e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyFire: {fileID: 9191448513298262796, guid: 94eec3eb66d6d8042ab01c15f6dacf9b, type: 3}
+  EnemyFire: {fileID: 2446872707383881829, guid: a670bcf26da62be48ad3ab7d11df54d8, type: 3}
+  Target: {fileID: 0}
   speed: -3
-  MinBlink: 1
-  MaxBlink: 8
+  MinBlink: 2
+  MaxBlink: 5

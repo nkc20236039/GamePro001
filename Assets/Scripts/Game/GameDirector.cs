@@ -12,7 +12,7 @@ public class GameDirector : MonoBehaviour
 
     const float TIME_LIMIT = 100f;          // 制限時間の最大値
     float time = TIME_LIMIT;                // 残り時間
-    public float damage;                    // 当たった時に減らされる時間ダメージ
+    public static float damage;                    // 当たった時に減らされる時間ダメージ
     float MperS = 0;                        // 60m/sの計算
 
     void Update()

@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &488587842
 GameObject:
@@ -566,7 +566,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &771866032
 GameObject:
@@ -885,7 +885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd11f84da1b48847ab31769dae33ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Director: {fileID: 1828490855}
   fireBallPrefab: {fileID: 5539333051183876605, guid: fd30e97be3b1c7841b7f12aab3396f43, type: 3}
   speed: 0.1
   fireBallSpan: 0.5
@@ -922,7 +921,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeGage: {fileID: 591781598}
   advance: {fileID: 771866032}
-  damage: 0
 --- !u!4 &1828490857
 Transform:
   m_ObjectHideFlags: 0
@@ -936,5 +934,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
