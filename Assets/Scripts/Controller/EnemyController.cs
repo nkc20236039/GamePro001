@@ -26,7 +26,6 @@ public class EnemyController : MonoBehaviour
         transform.position += new Vector3(speed * Time.deltaTime, 0f, 0f);
         Blinktime -= Time.deltaTime;
         // ƒ‰ƒ“ƒ_ƒ€‚Éu‚«AUŒ‚‚·‚é
-        Debug.Log(Blinktime);
         if (Blinktime < 0)
         {
             Blinktime = 1000;
